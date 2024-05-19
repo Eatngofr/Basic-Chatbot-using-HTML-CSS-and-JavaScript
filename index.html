@@ -34,6 +34,132 @@
     <script src="chatbot.js"></script>
 </body>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8" />
+<meta name="bigo-author" content="xierenshan" />
+<meta name="applicable-device" content="mobile" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="format-detection" content="address=no" />
+<meta name="twitter:card" content="Kom till BIGOLIVE för att titta på LIVE, chatta och få vänner."/>
+<meta property="og:title" content="BIGOLIVE" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ta.bigolive.tv/spring_bigolive_activity/act2021/share39011/mm?code=6893554100&amp;uid=2948801479&amp;room=7015338174445824037&amp;actor=560092345&amp;roomType=0&amp;shareType="/>
+<meta property="og:image" content="https://esx.bigo.sg/eu_live/2u7/13r4X7.jpg"/>
+<meta property="og:description" content="Kom till BIGOLIVE för att titta på LIVE, chatta och få vänner."/>
+<meta property="al:android:package" content="sg.bigo.live" />
+<meta property="al:android:app_name" content="BIGO LIVE" />
+<meta property="al:android:url" content="bigolive://livevideoshow?roomid=7015338174445824037&amp;uid=560092345" />
+<meta property="al:ios:app_store_id" content="1077137248" />
+<meta property="al:ios:app_name" content="BIGO LIVE" />
+<meta property="al:ios:url" content="bigolive://livevideoshow?roomid=7015338174445824037&amp;uid=560092345" />
+<meta property="al:web:url" content="https://ta.bigolive.tv/spring_bigolive_activity/act2021/share39011/mm?code=6893554100&amp;uid=2948801479&amp;room=7015338174445824037&amp;actor=560092345&amp;roomType=0&amp;shareType=" />
+
+    <title>BIGO LIVE</title>
+    <script>
+        /eruda=true/.test(window.location) && (document.write('<script src="//cdn.jsdelivr.net/npm/eruda"><\/script>'), document.write("<script>eruda.init();<\/script>"));
+    </script>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        .jumpFail {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            display: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<!-- http://www.bigo.tv/sid/2359890953_530034792_1557481759?c=8&p=2&t=0&b=274281902&nsukey=7HWvJ1DwcWWqyAZ3XUcE75QulhGcJY4wNeeeyjQ927ZShGV8WI8dfrJAIvZNzWPl2OM2CHdQjjojeIc31KngM2XHXhHlH9D%2FCW6UPZaZkrwxVo6w5uY7t%2BL6NpFhKSLkBtJ4FxPV9x%2BioQEbUbDwN2dBobK33gJkKESn9QxTX2%2FmXrPxYSSd2V%2FAVQ9xlzWQDxnijXzu13l4uwmrhIBEGQ%3D%3D  -->
+<!-- bigolive://livevideoshow?roomid=6636477279367664649&uid=1779114310 -->
+<div id="linkBox" data-url="https://ta.bigolive.tv/spring_bigolive_activity/act2021/share39011/mm?code=6893554100&amp;uid=2948801479&amp;room=7015338174445824037&amp;actor=560092345&amp;roomType=1&amp;shareType="></div>
+<div id="deepBox" data-url="bigolive://livevideoshow?roomid=7015338174445824037&amp;uid=560092345&amp;visitor=1"></div>
+
+<!-- 拿不到link和deepLink的跳转失败提示 -->
+<div id="jumpFail" class="jumpFail">
+    <div><img src="//gdl.bigolive.tv/cn/design-works/cng4/M0C/DD/08/GQAwAFzU5jCEf7_3AAAAAAES-xQ990.png"/></div>
+    <p>Please refresh</p>
+</div>
+
+<script>
+    var ua = window.navigator.userAgent || '';
+    var isAndroid = /android/i.test(ua);
+    var isIos = /iphone|ipad|ipod/i.test(ua);
+    // 安卓 chrome 浏览器，很多 app 都是在 chrome 的 ua 上进行扩展的
+    var isOriginalChrome = /chrome\/[\d.]+ Mobile Safari\/[\d.]+/i.test(ua) && isAndroid && ua.indexOf('Version') < 0;
+    var isFaceBook = /FB_IAB/.test(ua);
+    // web页url
+    var linkBox = document.querySelector('#linkBox');
+    // deepLink
+    var deepBox = document.querySelector('#deepBox');
+    var link = linkBox.getAttribute('data-url');
+    var deepLink = deepBox.getAttribute('data-url');
+    var dom_jumpFail = document.querySelector('#jumpFail');
+    var WAIT = 800;
+
+
+    // 点击刷新按钮刷新页面
+    dom_jumpFail.addEventListener('click', function () {
+        location.href = location.href;
+    });
+
+    if (deepLink && link) {
+        // 打开H5页
+        setTimeout(function () {
+            window.location.replace(link);
+        }, WAIT);
+        // if (isIos) {
+        //   // evokeByIFrame(deepLink);
+        //   evokeByTagA(deepLink);
+        // } else if (isFaceBook && isAndroid) { // facebook 系的APP（fb,messager无法调deeplink,会提示页面加载失败）
+        //   window.location.href = link;
+        // } else if (isOriginalChrome) { // 推特走的也是这条语句
+        //   evokeByTagA(deepLink);
+        // } else {
+        //   evokeByIFrame(deepLink);
+        // }
+    } else {
+        dom_jumpFail.style.cssText = 'display: block;';
+    }
+
+    function evokeByIFrame(uri) {
+        var iframe = document.createElement('iframe');
+        iframe.frameborder = '0';
+        iframe.style.cssText = 'display:none;border:0;width:0;height:0;';
+        document.body.appendChild(iframe);
+        iframe.src = uri;
+    }
+
+    function evokeByTagA(uri) {
+        var tagA = document.createElement('a');
+
+        tagA.setAttribute('href', uri);
+        tagA.style.display = 'none';
+        document.body.appendChild(tagA);
+
+        tagA.click();
+    }
+
+</script>
+</body>
+</html>
+
 
 <div>
   <p>Copyright © 2023 Mr.Pavankumar. All Rights are  reserved</p>   
